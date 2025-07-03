@@ -42,13 +42,14 @@
 
 :root {
   --radius: 0.625rem;
+  --header-height: 64px;
 
   --background: #f4c3c3;
   --background-secondary: #f8ecd1;
   --foreground: #0e172c;
 
-  --accent: #ac98c2;
-  --accent-hover: #d0a6b5;
+  --accent: #ac59a044;
+  --accent-hover: #ac59a06d;
   --accent-foreground: #ffffff;
 
   --primary: #ac59a0;

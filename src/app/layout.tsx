@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 const quicksand = Quicksand({
   subsets: ["latin"],
   variable: "--font-quicksand",
-  weight: ["400", "700"],
+  weight: ["500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
           <Header />
 
           <main className="flex-1">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="container mx-auto py-8">
               {children}
             </div>
           </main>

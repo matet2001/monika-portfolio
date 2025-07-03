@@ -10,41 +10,70 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const navItems = [
-  { href: "#intro", label: "Bemutatkozás" },
-  { href: "#sessions", label: "Ülések" },
-  { href: "#contact", label: "Kapcsolat" },
+  { href: "#intro", label: "Bemutatkozás" }, // About Monika
+  { href: "#about-constellation", label: "Családállítás" }, // What is Family Constellation?
+  { href: "#signup", label: "Jelentkezem", isCta: true }, // CTA Book
+  { href: "#sessions", label: "Ülések" }, // Individual vs Group Sessions
+  { href: "#faq", label: "Gyakori kérdések" }, // Common questions/emotional topics
 ];
-
 export default function Header() {
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+  function scrollToView(href: string) {
+    const el = document.querySelector(href);
+    if (el) {
+      const rootStyles = getComputedStyle(document.documentElement);
+      const headerHeightStr = rootStyles
+        .getPropertyValue("--header-height")
+        .trim();
+      const headerHeight = parseInt(headerHeightStr.replace("px", "")) || 64;
+
+      const y =
+        el.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      window.scrollTo({ top: y, behavior: "smooth" });
+      window.history.pushState(null, "", href);
+    }
+  }
+
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 max-w-7xl w-full">
+    <motion.header
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="sticky top-0 z-50 w-full backdrop-blur-md rounded-b-3xl h-[var(--header-height)]"
+    >
+      <div className="container mx-auto flex h-full items-center justify-between px-4 max-w-7xl w-full">
         {/* Logo / Brand */}
-        <Link href="/" className="text-lg font-semibold text-primary">
-          🌸Családállítás
+        <Link href="/" className="text-xl font-semibold text-primary">
+          🌸 Családállítás
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden gap-10 md:flex">
-          <nav className="hidden gap-10 md:flex">
-            {navItems.map((item) => (
-              <Button key={item.href} variant={"ghost"} className="text-md">
-                {item.label}
-              </Button>
-            ))}
-          </nav>
+        <nav className="hidden md:flex gap-4 justify-center flex-1 ">
+          {navItems.map((item) => (
+            <Button
+              key={item.href}
+              variant={item.isCta ? "default" : "ghost"}
+              className="text-md"
+              onClick={() => scrollToView(item.href)}
+            >
+              {item.label}
+            </Button>
+          ))}
         </nav>
 
-        {/* Actions */}
-        <div className="hidden md:flex items-center gap-4">
-          <Button size={"lg"}>Jelentkezem</Button>
-        </div>
+        {/* Logo / Brand */}
+        <Link href="/" className="text-xl font-semibold text-primary invisible">
+          🌸 Családállítás
+        </Link>
 
         {/* Mobile Menu */}
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="cursor-pointer">
                 <Menu className="h-6 w-6" />
@@ -61,17 +90,24 @@ export default function Header() {
               <SheetTitle />
               <nav className="flex flex-col space-y-2">
                 {navItems.map((item) => (
-                  <Button key={item.href} variant={"ghost"} className="text-md">
+                  <Button
+                    key={item.href}
+                    variant={item.isCta ? "default" : "ghost"}
+                    className="text-md"
+                    onClick={() => {
+                      scrollToView(item.href);
+                      setIsSheetOpen(false);
+                    }}
+                  >
                     {item.label}
                   </Button>
                 ))}
                 <div></div>
-                <Button>Bejelentkezés</Button>
               </nav>
             </SheetContent>
           </Sheet>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
