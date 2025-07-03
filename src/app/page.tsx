@@ -2,7 +2,7 @@ import AboutSection from "@/components/sections/about";
 
 export default function Home() {
   return (
-    <div className="flex flex-col space-y-72">
+    <div className="flex flex-col">
       <AboutSection />
 
       <section

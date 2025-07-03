@@ -9,9 +9,9 @@ export default function AboutSection() {
   return (
     <section
       id="intro"
-      className="w-full min-h-screen px-10 bg-background text-foreground scroll-mt-[var(--header-height)]"
+      className="w-full h-[calc(100vh-var(--header-height))] px-10 bg-background text-foreground scroll-mt-[var(--header-height)]"
     >
-      <div className="flex flex-col md:flex-row items-start justify-start max-w-7xl mx-auto gap-12">
+      <div className="flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto gap-x-12 h-full">
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -20,7 +20,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex"
         >
-          <div className="relative w-84 h-84 md:w-100 md:h-100 rounded-full overflow-hidden shadow-lg border-4 border-primary">
+          <div className="relative aspect-square w-102 rounded-full overflow-hidden shadow-lg border-4 border-primary">
             <Image
               src="/monika-selfie.jpg"
               alt="Nagy Mónika"

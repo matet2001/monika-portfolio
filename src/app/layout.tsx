@@ -28,7 +28,7 @@ export default function RootLayout({
           <Header />
 
           <main className="flex-1">
-            <div className="container mx-auto py-8">
+            <div className="container mx-auto">
               {children}
             </div>
           </main>
