@@ -23,6 +23,9 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
 
+  --color-popover: var(--popover);
+  --color-popover-hover: var(--popover-hover);
+
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -59,7 +62,8 @@
   /* 🃏 UI Containers */
   --card: #fff;
   --card-foreground: var(--foreground);
-  --popover: #fff;
+  --popover: #e1a7ba;
+  --popover-hover: #95717d;
   --popover-foreground: var(--foreground);
 
   /* 🎨 Muted / Subtle UI */
@@ -71,7 +75,7 @@
 
   /* 🧩 Borders and Inputs */
   --border: #e0e0e0;
-  --input: #e0e0e0;
+  --input: #ac59a044;
   --ring: #d1c4e9;
 
   /* 📊 Chart Colors */
