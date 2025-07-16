@@ -83,7 +83,7 @@ export default function ConstellationSection() {
             </h2>
             <p className="text-lg leading-relaxed">
               A családállítás elnevezés kicsit félrevezető, mert nemcsak a
-              családról szól. Bármit "állíthatunk" a középpontba:
+              családról szól. Bármit &quot;állíthatunk&quot; a középpontba:
               párkapcsolatot, munkát, anyagi problémákat, krónikus fáradtságot,
               kedvetlenséget, bánatot, egyszóval: <strong>BÁRMIT</strong>.
             </p>
