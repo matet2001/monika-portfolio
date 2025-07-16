@@ -44,7 +44,7 @@ export default function ConstellationSection() {
             className="relative w-full max-w-md h-96 rounded-xl overflow-hidden shadow-xl"
           >
             <Image
-              src="/monika-couch.jpg" // replace with actual image
+              src="/monika-couch-cropped.jpg"
               alt="Mónika családállítás közben"
               fill
               className="object-cover"
@@ -53,7 +53,23 @@ export default function ConstellationSection() {
         </div>
 
         {/* Block 2 — Image Left, Text Right */}
-        <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-x-x-x-x-x-x-12 h-screen">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-x-12 h-screen">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true }}
+            className="relative w-full max-w-md h-96 rounded-xl overflow-hidden shadow-xl mt-12 md:mt-0"
+          >
+            <Image
+              src="/placeholder-image.jpg" // Replace with real image
+              alt="Kép a családállításról"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+
           {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -63,33 +79,18 @@ export default function ConstellationSection() {
             className="max-w-xl space-y-6 text-center md:text-left"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-primary leading-tight">
-              Mi a Mező, és hogyan segít?
+              Nem csak a családról szól
             </h2>
             <p className="text-lg leading-relaxed">
-              A Mező — vagyis a morfogenetikus mező — láthatatlan, mégis
-              érzékelhető. Információt hordoz, és segít megmutatni a
-              gyökérokokat, amiket tudatunk eddig nem akart meglátni.
+              A családállítás elnevezés kicsit félrevezető, mert nemcsak a
+              családról szól. Bármit "állíthatunk" a középpontba:
+              párkapcsolatot, munkát, anyagi problémákat, krónikus fáradtságot,
+              kedvetlenséget, bánatot, egyszóval: <strong>BÁRMIT</strong>.
             </p>
-            <p className="text-muted-foreground text-sm italic">
+            <p className="text-muted-foreground text-md italic">
               „Amikor a tudattalan láthatóvá válik, elkezd gyógyulni, amit már
               nem kell többé rejtegetni.”
             </p>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            viewport={{ once: true }}
-            className="relative w-full max-w-md h-96 rounded-xl overflow-hidden shadow-xl"
-          >
-            <Image
-              src="/placeholder-image.jpg" // Replace with an actual secondary image
-              alt="Kép a családállításról"
-              fill
-              className="object-cover"
-            />
           </motion.div>
         </div>
       </div>

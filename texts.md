@@ -1,8 +1,9 @@
 A család- és rendszerállítás kiváló lehetőség arra, hogy az életünket befolyásoló mélyen lévő  problémát a felszínre hozza, tudatosítsa, hogy mi akadályoz meg minket abban, hogy boldog, könnyed, szeretetteljes életet éljünk. Miután felszínre hoztuk a problémát, a gyógyulás és oldódás folyamata megkezdődik fizikai, érzelmi és szellemi szinteken.
 Mónika
 Nagy Mónika vagyok, magyar és matematika szakos középiskolai tanár. 2019-ben találkoztam először a családállítással.  Az életemnek akkor egy nehéz időszakát éltem meg. Nem találtam hatékony segítséget, ezért végül a családállításhoz fordultam. Voltak ismerőseim, akik kipróbálták, és nagyon dicsérték a módszert. Úgy döntöttem, hogy én is kipróbálom. A hatására elkezdett változni az életem. Annyira megszerettem, hogy én is csinálni akartam. 2021/2022-ben elvégeztem egy képzést, így mostmár én is tarthatok állításokat.
-Mónika
+
 A családállítás elnevezés kicsit félrevezető, mert nemcsak a családról szól.  Bármit "állíthatunk" a középpontba: párkapcsolatot, munkát, anyagi problémákat, krónikus fáradtságot, kedvetlenséget, bánatot, egyszóval: BÁRMIT. 
+
 A középpontba állított kérdésre választ kapunk a Mezőtől.  
 Mi a Mező? Ez a mező a morfogenetikus mező. A morfogenetikus mező (morfe - struktúrát, formát jelent, a genesis szó jelentése - keletkezik) olyan, mint az elektromágneses vagy éppen a gravitációs mező. Szabad szemmel nem látható, de érzékelhető. C. G. Jung és Dr. Roberto Assagioli ezt a mezőt kollektív tudattalannak, a biológus kutatók csoportléleknek nevezik, míg a fizikusok ezt a láthatatlan, mindent mindennel összekötő közeget kvantum mezőnek hívják.
 Szóval nevezzük bárhogyan is, a lényeg, hogy létezik, körülvesz minket, és információkat tárol mindenről. 
@@ -10,7 +11,7 @@ Ha van egy kérdésünk, ami nem hagy minket nyugodni, a Mezőnek feltéve az se
 Hogyan működik a csoportos családállítás?
    Az állító, aki a csoport elé járul a problémájával kiválasztja a csoport tagjai közül az őt képviselő személyt. Elmondja, hogy a jelenlegi családjában vagy a származási családjában van-e a számára kihívást jelentő helyzet. Felállnak a csoportból a család tagjait megszemélyesítő képviselők. A kiválasztott szereplők között elkezd működni az állító családjára jellemző energia: ki kit szeret, gyűlöl, vagy éppen semleges. Megjelenik a térben a család leképezése, elfojtott érzések törnek felszínre, végre kimondatnak azok a szavak, amelyek eddig el lettek hallgatva. Megkezdődik a családrendszer felszabadulása az eltemetett érzelmek alól....
    Minden állítás tisztítja a rendszert, kivétel nélkül, mert valakiben a családból megszületett a bátorság, hogy felvállalja a vátoztatás nemes szándékát.
-Mónika
+
 "Milyen egy családállítás, 
 és miért lesz nekem utána jobb?"
 Az állítás azzal kezdődik, hogy elmondod, neked most az életedben mi a legnagyobb teher: párkapcsolat, anyagi gondok, egészségügyi probléma...

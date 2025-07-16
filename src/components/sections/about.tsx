@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import { scrollToView } from "@/lib/utils";
 
 export default function AboutSection() {
@@ -21,9 +20,9 @@ export default function AboutSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex"
         >
-          <div className="relative aspect-square w-102 rounded-full overflow-hidden shadow-lg border-4 border-primary">
+          <div className="relative aspect-square w-102 rounded-full overflow-hidden shadow-lg border-4 border-primary bg-background-secondary/80">
             <Image
-              src="/monika-selfie.jpg"
+              src="/monika-selfie-cropped.png"
               alt="Nagy Mónika"
               fill
               className="object-cover"
@@ -52,10 +51,10 @@ export default function AboutSection() {
               találkoztam először a családállítással.
             </p>
             <p className="text-lg leading-relaxed">
-              Nem találtam máshol megoldást, ezért kipróbáltam – és mélyen
-              megérintett. Azóta sok minden változott bennem és körülöttem.
-              2021-ben elvégeztem a családállító képzést, és ma már én is
-              segítek másoknak ezzel a csodálatos módszerrel.
+              Nem találtam máshol megoldást, ezért kipróbáltam és a hatására
+              elkezdett változni az életem. Azóta sok minden változott bennem és
+              körülöttem. 2021-ben elvégeztem a családállító képzést, és ma már
+              én is segítek másoknak ezzel a csodálatos módszerrel.
             </p>
           </div>
 

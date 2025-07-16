@@ -146,7 +146,7 @@ export default function ApplySection() {
 
         {/* Image */}
         <div className="w-full md:w-1/2 mt-16 md:mt-0 flex justify-center md:justify-end">
-          <div className="relative w-full max-w-xl h-[28rem] rounded-xl overflow-hidden shadow-xl">
+          <div className="relative w-full max-w-lg h-120 rounded-xl overflow-hidden shadow-xl">
             <Image
               src="/monika-coach.jpg"
               alt="Mónika állítást tart"
