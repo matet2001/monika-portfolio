@@ -10,30 +10,26 @@ import {
   SelectItem,
   SelectValue,
 } from "../ui/select";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ApplySection() {
-  const [type, setType] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    console.log(type);
-  }, [type]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
+
 
     const form = new FormData(e.currentTarget);
     const data = {
       firstName: form.get("firstName") as string,
       lastName: form.get("lastName") as string,
       email: form.get("email") as string,
-      type,
+      type: form.get("type") as string,
     };
 
     const res = await fetch("/apply", {
@@ -106,7 +102,7 @@ export default function ApplySection() {
                 disabled={isLoading}
               />
 
-              <Select onValueChange={setType} disabled={isLoading}>
+              <Select disabled={isLoading} name="type" required>
                 <SelectTrigger className="w-full cursor-pointer">
                   <SelectValue placeholder="Válassz családállítás típust..." />
                 </SelectTrigger>
