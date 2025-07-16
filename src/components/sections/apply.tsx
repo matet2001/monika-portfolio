@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ApplySection() {
   const [type, setType] = useState("");
@@ -57,8 +58,14 @@ export default function ApplySection() {
       className="w-full scroll-mt-[var(--header-height)] px-6 md:px-10"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between h-auto md:min-h-screen">
-        {/* Left Side */}
-        <div className="w-full md:w-1/2 flex flex-col space-y-8">
+        {/* Left Side — Animated Form */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="w-full md:w-1/2 flex flex-col space-y-8"
+        >
           <div className="space-y-4">
             <h2 className="text-4xl sm:text-5xl font-bold text-primary leading-tight">
               Találkozzunk személyesen vagy online!
@@ -71,7 +78,6 @@ export default function ApplySection() {
 
           {!isSubmitted ? (
             <form className="space-y-6" onSubmit={handleSubmit}>
-              {/* Name Row */}
               <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0">
                 <Input
                   type="text"
@@ -91,7 +97,6 @@ export default function ApplySection() {
                 />
               </div>
 
-              {/* Email */}
               <Input
                 type="email"
                 placeholder="Email címed..."
@@ -101,7 +106,6 @@ export default function ApplySection() {
                 disabled={isLoading}
               />
 
-              {/* Select Type */}
               <Select onValueChange={setType} disabled={isLoading}>
                 <SelectTrigger className="w-full cursor-pointer">
                   <SelectValue placeholder="Válassz családállítás típust..." />
@@ -122,7 +126,6 @@ export default function ApplySection() {
                 </SelectContent>
               </Select>
 
-              {/* Submit */}
               <Button
                 type="submit"
                 className="w-full h-12 text-base"
@@ -142,10 +145,16 @@ export default function ApplySection() {
               </p>
             </div>
           )}
-        </div>
+        </motion.div>
 
-        {/* Image */}
-        <div className="w-full md:w-1/2 mt-16 md:mt-0 flex justify-center md:justify-end">
+        {/* Right Side — Animated Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          viewport={{ once: true }}
+          className="w-full md:w-1/2 mt-16 md:mt-0 flex justify-center md:justify-end"
+        >
           <div className="relative w-full max-w-lg h-120 rounded-xl overflow-hidden shadow-xl">
             <Image
               src="/monika-coach.jpg"
@@ -154,7 +163,7 @@ export default function ApplySection() {
               className="object-cover"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
