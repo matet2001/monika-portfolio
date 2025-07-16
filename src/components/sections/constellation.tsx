@@ -29,7 +29,7 @@ export default function ConstellationSection() {
               oldódás folyamata ekkor megkezdődik — fizikai, érzelmi és szellemi
               szinteken.
             </p>
-            <p className="text-muted-foreground text-sm italic">
+            <p className="text-muted-foreground text-md italic">
               “Valami végre megmozdul. És elindul egy könnyebb, szabadabb élet
               felé vezető út.”
             </p>

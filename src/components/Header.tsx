@@ -12,6 +12,7 @@ import {
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { scrollToView } from "@/lib/utils";
 
 const navItems = [
   { href: "#intro", label: "Bemutatkozás" }, // About Monika
@@ -22,22 +23,6 @@ const navItems = [
 ];
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-
-  function scrollToView(href: string) {
-    const el = document.querySelector(href);
-    if (el) {
-      const rootStyles = getComputedStyle(document.documentElement);
-      const headerHeightStr = rootStyles
-        .getPropertyValue("--header-height")
-        .trim();
-      const headerHeight = parseInt(headerHeightStr.replace("px", "")) || 64;
-
-      const y =
-        el.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-      window.scrollTo({ top: y, behavior: "smooth" });
-      window.history.pushState(null, "", href);
-    }
-  }
 
   return (
     <motion.header

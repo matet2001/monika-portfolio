@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import { scrollToView } from "@/lib/utils";
 
 export default function AboutSection() {
   return (
@@ -59,16 +60,14 @@ export default function AboutSection() {
           </div>
 
           <div className="mt-8 space-y-4">
-            <h3 className="text-xl font-semibold text-primary">
+            <h3 className="text-2xl font-semibold text-primary">
               Vegyük fel a kapcsolatot!
             </h3>
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Input
-                type="email"
-                placeholder="Email címed..."
-                className="w-full sm:max-w-xs"
-              />
-              <Button type="submit" className="w-full sm:w-auto h-12 min-w-xs">
+            <div className="flex flex-col sm:flex-row items-center">
+              <Button
+                onClick={() => scrollToView("#signup")}
+                className="w-full h-12 min-w-xs"
+              >
                 Jelentkezem
               </Button>
             </div>

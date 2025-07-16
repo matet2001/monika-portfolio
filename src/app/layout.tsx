@@ -4,6 +4,7 @@ import "./globals.css";
 import { Quicksand } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import Header from "@/components/Header";
+import { Toaster } from "sonner";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -28,11 +29,9 @@ export default function RootLayout({
           <Header />
 
           <main className="flex-1">
-            <div className="container mx-auto">
-              {children}
-            </div>
+            <div className="container mx-auto">{children}</div>
           </main>
-
+          <Toaster position="top-center" richColors />
           <Footer />
         </div>
       </body>
