@@ -38,7 +38,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-4 justify-center flex-1 ">
+        <nav className="hidden md:flex gap-4 justify-center  ">
           {navItems.map((item) => (
             <Button
               key={item.href}
@@ -51,10 +51,10 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Logo / Brand */}
+        {/* Logo / Brand
         <Link href="/" className="text-xl font-semibold text-primary invisible">
           🌸 Családállítás
-        </Link>
+        </Link> */}
 
         {/* Mobile Menu */}
         <div className="md:hidden">

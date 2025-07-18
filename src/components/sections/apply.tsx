@@ -108,16 +108,13 @@ export default function ApplySection() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="egyeni-szemelyes">
-                    Egyéni (személyes) – 18.000 Ft
+                    Egyéni (személyes) – 20.000 Ft
                   </SelectItem>
                   <SelectItem value="egyeni-online">
-                    Egyéni (online) – 15.000 Ft
+                    Egyéni (online) – 20.000 Ft
                   </SelectItem>
                   <SelectItem value="csoportos-szemelyes">
-                    Csoportos (személyes) – 12.000 Ft
-                  </SelectItem>
-                  <SelectItem value="csoportos-online">
-                    Csoportos (online) – 10.000 Ft
+                    Csoportos (személyes) – 10.000 Ft / Fő
                   </SelectItem>
                 </SelectContent>
               </Select>

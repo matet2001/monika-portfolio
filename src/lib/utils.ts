@@ -12,8 +12,9 @@ export function scrollToView(href: string) {
     const headerHeightStr = rootStyles
       .getPropertyValue("--header-height")
       .trim();
-    const headerHeight = href === "intro" ? (parseInt(headerHeightStr.replace("px", "")) || 64) : 0;
+    const headerHeight = href === "#intro" ? (parseInt(headerHeightStr.replace("px", "")) || 64) : 0;
 
+    console.log(headerHeight);
     const y =
       el.getBoundingClientRect().top + window.pageYOffset - headerHeight;
     window.scrollTo({ top: y, behavior: "smooth" });

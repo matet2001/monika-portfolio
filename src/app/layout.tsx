@@ -24,13 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className={`${quicksand.variable} antialiased`}>
-      <body className="font-main antialiased text-foreground">
+      <body className="font-main antialiased text-foreground overflow-x-hidden">
         <div className="min-h-screen flex flex-col">
           <Header />
 
-          <main className="flex-1">
-            <div className="container mx-auto">{children}</div>
-          </main>
+          <main className="flex-1">{children}</main>
           <Toaster position="top-center" richColors />
           <Footer />
         </div>
