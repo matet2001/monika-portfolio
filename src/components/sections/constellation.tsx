@@ -7,7 +7,7 @@ export default function ConstellationSection() {
   return (
     <section
       id="about-constellation"
-      className="w-full bg-background-secondary text-foreground px-6 md:px-10 scroll-mt-[var(--header-height)]"
+      className="w-full text-foreground px-6 md:px-10 scroll-mt-[var(--header-height)] bg-gradient-secondary"
     >
       <div className="max-w-7xl mx-auto flex flex-col ">
         {/* Block 1 — Text Left, Image Right */}

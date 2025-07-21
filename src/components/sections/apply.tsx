@@ -51,7 +51,7 @@ export default function ApplySection() {
   return (
     <section
       id="signup"
-      className="w-full scroll-mt-[var(--header-height)] px-6 md:px-10"
+      className="w-full scroll-mt-[var(--header-height)] px-6 md:px-10 bg-gradient-main"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between h-auto md:min-h-screen">
         {/* Left Side — Animated Form */}

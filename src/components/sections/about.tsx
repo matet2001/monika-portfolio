@@ -9,7 +9,7 @@ export default function AboutSection() {
   return (
     <section
       id="intro"
-      className="w-full md:h-[calc(100vh-var(--header-height))] h-screen bg-background flex"
+      className="w-full md:h-[calc(100vh-var(--header-height))] h-screen bg-gradient-main flex"
     >
       {/* Containerized content inside full-width section */}
       <div className="container flex flex-col md:flex-row items-center justify-start md:justify-center md:gap-20 xl:gap-40 px-10 sm:px-2 md:px-10 mx-auto flex-1">

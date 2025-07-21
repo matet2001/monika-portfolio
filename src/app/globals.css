@@ -47,6 +47,9 @@
   --radius: 0.625rem;
   --header-height: 64px;
 
+  --gradient-main: linear-gradient(to bottom, #f4c3c3, #f8ecd1);
+  --gradient-secondary: linear-gradient(to top, #f4c3c3, #f8ecd1);
+
   --background: #f4c3c3;
   --background-secondary: #f8ecd1;
   --foreground: #0e172c;
@@ -128,6 +131,18 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+}
+
+.bg-gradient-main {
+  background-image: var(--gradient-main);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-gradient-secondary {
+  background-image: var(--gradient-secondary);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @layer base {

@@ -11,13 +11,13 @@ export default function Home() {
 
       <section
         id="sessions"
-        className="w-full min-h-screen bg-background-secondary"
+        className="w-full min-h-screen  bg-gradient-secondary"
       >
         <h2 className="text-3xl font-semibold mb-6">Ülések</h2>
         {/* Individual vs Group Sessions explanation */}
       </section>
 
-      <section id="faq" className="w-full min-h-screen">
+      <section id="faq" className="w-full min-h-screen  bg-gradient-main">
         <h2 className="text-3xl font-semibold mb-6">Gyakori kérdések</h2>
         {/* FAQs and emotional topics */}
       </section>
