@@ -18,8 +18,8 @@ const navItems = [
   { href: "#intro", label: "Bemutatkozás" }, // About Monika
   { href: "#about-constellation", label: "Családállítás" }, // What is Family Constellation?
   { href: "#signup", label: "Jelentkezem", isCta: true }, // CTA Book
-  { href: "#sessions", label: "Ülések" }, // Individual vs Group Sessions
-  { href: "#faq", label: "Gyakori kérdések" }, // Common questions/emotional topics
+  { href: "#testimonials", label: "Vélemények" },
+  { href: "#contact", label: "Kapcsolat" },
 ];
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -50,11 +50,6 @@ export default function Header() {
             </Button>
           ))}
         </nav>
-
-        {/* Logo / Brand
-        <Link href="/" className="text-xl font-semibold text-primary invisible">
-          🌸 Családállítás
-        </Link> */}
 
         {/* Mobile Menu */}
         <div className="md:hidden">

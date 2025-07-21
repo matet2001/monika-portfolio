@@ -23,7 +23,6 @@ export default function ApplySection() {
     e.preventDefault();
     setIsLoading(true);
 
-
     const form = new FormData(e.currentTarget);
     const data = {
       firstName: form.get("firstName") as string,
@@ -51,19 +50,19 @@ export default function ApplySection() {
   return (
     <section
       id="signup"
-      className="w-full scroll-mt-[var(--header-height)] px-6 md:px-10 bg-gradient-main"
+      className="w-full px-6 md:px-10 py-24 md:py-32 bg-gradient-main scroll-mt-[var(--header-height)]"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between h-auto md:min-h-screen">
-        {/* Left Side — Animated Form */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* Left — Form */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="w-full md:w-1/2 flex flex-col space-y-8"
+          className="w-full md:w-1/2 space-y-8"
         >
           <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold text-primary leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary leading-tight">
               Találkozzunk személyesen vagy online!
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -74,11 +73,10 @@ export default function ApplySection() {
 
           {!isSubmitted ? (
             <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Input
                   type="text"
                   placeholder="Vezetéknév"
-                  className="w-full"
                   name="lastName"
                   required
                   disabled={isLoading}
@@ -86,7 +84,6 @@ export default function ApplySection() {
                 <Input
                   type="text"
                   placeholder="Keresztnév"
-                  className="w-full"
                   name="firstName"
                   required
                   disabled={isLoading}
@@ -96,13 +93,12 @@ export default function ApplySection() {
               <Input
                 type="email"
                 placeholder="Email címed..."
-                className="w-full"
                 name="email"
                 required
                 disabled={isLoading}
               />
 
-              <Select disabled={isLoading} name="type" required>
+              <Select name="type" required disabled={isLoading}>
                 <SelectTrigger className="w-full cursor-pointer">
                   <SelectValue placeholder="Válassz családállítás típust..." />
                 </SelectTrigger>
@@ -114,7 +110,7 @@ export default function ApplySection() {
                     Egyéni (online) – 20.000 Ft
                   </SelectItem>
                   <SelectItem value="csoportos-szemelyes">
-                    Csoportos (személyes) – 10.000 Ft / Fő
+                    Csoportos (személyes) – 10.000 Ft / fő
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -128,7 +124,7 @@ export default function ApplySection() {
               </Button>
             </form>
           ) : (
-            <div className="flex flex-col items-start space-y-4">
+            <div className="space-y-4">
               <CheckCircle className="text-green-500 w-10 h-10" />
               <h3 className="text-2xl font-semibold text-green-700">
                 A jelentkezés sikeres volt!
@@ -140,15 +136,15 @@ export default function ApplySection() {
           )}
         </motion.div>
 
-        {/* Right Side — Animated Image */}
+        {/* Right — Image */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
-          className="w-full md:w-1/2 mt-16 md:mt-0 flex justify-center md:justify-end"
+          className="w-full md:w-1/2 flex justify-center"
         >
-          <div className="relative w-full max-w-lg h-120 rounded-xl overflow-hidden shadow-xl">
+          <div className="relative w-full max-w-md h-96 rounded-xl overflow-hidden shadow-xl">
             <Image
               src="/monika-coach.jpg"
               alt="Mónika állítást tart"
