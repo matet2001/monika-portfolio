@@ -50,9 +50,9 @@ export default function ApplySection() {
   return (
     <section
       id="signup"
-      className="w-full px-6 md:px-10 py-24 md:py-32 bg-gradient-main scroll-mt-[var(--header-height)]"
+      className="w-full px-6 md:px-10 min-h-screen bg-gradient-main scroll-mt-[var(--header-height)] flex items-center justify-center"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
         {/* Left — Form */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}

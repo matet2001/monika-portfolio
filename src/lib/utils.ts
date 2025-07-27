@@ -12,7 +12,7 @@ export function scrollToView(href: string) {
     const headerHeightStr = rootStyles
       .getPropertyValue("--header-height")
       .trim();
-    const headerHeight = href === "#intro" ? (parseInt(headerHeightStr.replace("px", "")) || 64) : 0;
+    const headerHeight =  (parseInt(headerHeightStr.replace("px", "")) / 2 || 64);
 
     console.log(headerHeight);
     const y =
