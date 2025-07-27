@@ -50,9 +50,9 @@ export default function ApplySection() {
   return (
     <section
       id="signup"
-      className="w-full px-6 md:px-10 min-h-screen bg-gradient-main scroll-mt-[var(--header-height)] flex items-center justify-center"
+      className="w-full px-4 sm:px-6 md:px-10 bg-gradient-main scroll-mt-[var(--header-height)] py-16 md:py-24"
     >
-      <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left — Form */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -61,11 +61,11 @@ export default function ApplySection() {
           viewport={{ once: true }}
           className="w-full md:w-1/2 space-y-8"
         >
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary leading-tight">
               Találkozzunk személyesen vagy online!
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground">
               Jelentkezz családállításra – válaszd ki a számodra megfelelő
               módot, és vágjunk bele együtt!
             </p>
@@ -124,8 +124,8 @@ export default function ApplySection() {
               </Button>
             </form>
           ) : (
-            <div className="space-y-4">
-              <CheckCircle className="text-green-500 w-10 h-10" />
+            <div className="space-y-4 text-center md:text-left">
+              <CheckCircle className="text-green-500 w-10 h-10 mx-auto md:mx-0" />
               <h3 className="text-2xl font-semibold text-green-700">
                 A jelentkezés sikeres volt!
               </h3>
@@ -144,7 +144,7 @@ export default function ApplySection() {
           viewport={{ once: true }}
           className="w-full md:w-1/2 flex justify-center"
         >
-          <div className="relative w-full max-w-md h-96 rounded-xl overflow-hidden shadow-xl">
+          <div className="relative w-full max-w-sm sm:max-w-md h-72 sm:h-96 rounded-xl overflow-hidden shadow-xl">
             <Image
               src="/monika-coach.jpg"
               alt="Mónika állítást tart"

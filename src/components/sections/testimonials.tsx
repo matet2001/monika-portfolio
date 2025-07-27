@@ -41,7 +41,7 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="w-full px-6 md:px-10 bg-gradient-secondary scroll-mt-[var(--header-height)] h-screen flex justify-center items-center py-10"
+      className="w-full px-4 sm:px-6 md:px-10 bg-gradient-secondary scroll-mt-[var(--header-height)] py-16 md:py-24"
     >
       <div className="max-w-6xl mx-auto text-center space-y-6">
         <motion.div
@@ -63,23 +63,26 @@ export default function TestimonialsSection() {
           <Carousel
             opts={{
               loop: true,
-              align: "start", // changed from "center"
+              align: "start",
             }}
             plugins={[plugin.current]}
             className="w-full"
           >
-            <CarouselContent className="gap-6 px-2 md:px-6">
+            <CarouselPrevious className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
+            <CarouselNext className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
+
+            <CarouselContent className="gap-4 sm:gap-6 px-1 sm:px-2 md:px-6">
               {testimonials.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-full md:basis-1/2 lg:basis-1/3"
+                  className="basis-full sm:basis-4/5 md:basis-1/2 lg:basis-1/3"
                 >
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="bg-input border rounded-xl shadow-md p-6 h-full flex flex-col justify-between text-left"
+                    className="bg-background-secondary border rounded-xl shadow-md p-5 sm:p-6 h-full flex flex-col justify-between text-left"
                   >
                     <p className="text-base sm:text-lg leading-relaxed italic mb-4">
                       {item.text}
@@ -91,8 +94,6 @@ export default function TestimonialsSection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
         </div>
       </div>
