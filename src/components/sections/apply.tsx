@@ -104,13 +104,13 @@ export default function ApplySection() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="egyeni-szemelyes">
-                    Egyéni (személyes) – 20.000 Ft
+                    Egyéni állítás – személyes részvétellel (20.000 Ft)
                   </SelectItem>
                   <SelectItem value="egyeni-online">
-                    Egyéni (online) – 20.000 Ft
+                    Egyéni állítás – online (20.000 Ft)
                   </SelectItem>
                   <SelectItem value="csoportos-szemelyes">
-                    Csoportos (személyes) – 10.000 Ft / fő
+                    Csoportos állítás – helyszíni részvétellel (10.000 Ft / fő)
                   </SelectItem>
                 </SelectContent>
               </Select>

@@ -33,7 +33,7 @@ const testimonials = [
 export default function TestimonialsSection() {
   const plugin = useRef(
     Autoplay({
-      delay: 10000,
+      delay: 5000,
       stopOnInteraction: true,
     })
   );
@@ -68,8 +68,8 @@ export default function TestimonialsSection() {
             plugins={[plugin.current]}
             className="w-full"
           >
-            <CarouselPrevious className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
-            <CarouselNext className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
+            <CarouselPrevious />
+            <CarouselNext />
 
             <CarouselContent className="gap-4 sm:gap-6 px-1 sm:px-2 md:px-6">
               {testimonials.map((item, index) => (

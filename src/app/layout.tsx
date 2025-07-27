@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Mónika Családállítás",
   description:
     "Családállítás Gyálon és online Nagy Mónikával – egyéni és csoportos lehetőségek, lelki oldások, mélyebb megértés önmagadról.",
+  other: {
+    "google-site-verification": "EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs",
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className={`${quicksand.variable} antialiased`}>
+      <meta
+        name="google-site-verification"
+        content="EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs"
+      />
       <body className="font-main antialiased text-foreground overflow-x-hidden">
         <div className="min-h-screen flex flex-col">
           <Header />

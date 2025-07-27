@@ -11,8 +11,11 @@ export default function ConstellationSection() {
       className="w-full px-4 sm:px-6 md:px-10 scroll-mt-[var(--header-height)] bg-gradient-secondary text-foreground py-16 md:py-24"
     >
       <div className="max-w-7xl mx-auto flex flex-col space-y-24">
+        <h1 className="text-4xl sm:text-4xl font-bold text-primary text-center">
+          Családállításról
+        </h1>
         {/* Block 1 — Text Left, Image Right */}
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -91,7 +94,7 @@ export default function ConstellationSection() {
           </motion.div>
         </div>
 
-        {/* Block 3 — Icons */}
+        {/* Block 3 — Miért pont a családállítás? */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,24 +105,26 @@ export default function ConstellationSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center">
             Miért pont a családállítás?
           </h2>
-          <div className="max-w-4xl mx-auto space-y-6 text-center md:text-left">
+
+          <div className="max-w-4xl mx-auto space-y-6 text-center md:text-left px-4 sm:px-6">
             <p className="text-base sm:text-lg leading-relaxed">
               Volt az életemnek egy nagyon kemény időszaka: a házasságom és az
               életem – nem szépítem – romokban volt. Elkezdtem dolgozni magamon
-              ezzel a módszerrel, és az életem kezdett megváltozni.
+              ezzel a megközelítéssel, és az életem elkezdett megváltozni.
             </p>
             <p className="text-base sm:text-lg leading-relaxed">
-              A saját bőrömön tapasztaltam meg a családállítás hatékonyságát,
-              ezért úgy döntöttem, hogy ezzel a módszerrel másoknak is szeretnék
-              segíteni.
+              A saját bőrömön tapasztaltam meg, mennyire hatékony tud lenni,
+              ezért úgy döntöttem, hogy másoknak is szeretnék segíteni vele –
+              hogy könnyebb, boldogabb életet teremthessenek maguknak.
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground italic">
-              „Ez a módszer nem kerüli meg a problémákat. A Mező pontosan
+              „Ez az út nem kerüli meg a problémákat. A Mező pontosan
               megmutatja, mi áll a nehézségek mögött – és lehetőséget ad a
               valódi gyógyulásra.”
             </p>
           </div>
 
+          {/* Icons — should always follow text on mobile */}
           <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-md mx-auto pt-4">
             <div className="flex flex-col items-center space-y-1 sm:space-y-2">
               <HeartCrack className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
@@ -132,6 +137,62 @@ export default function ConstellationSection() {
             <div className="flex flex-col items-center space-y-1 sm:space-y-2">
               <HelpingHand className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
               <p className="font-semibold text-xs sm:text-sm">Gyógyulás</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Block 4 — Mi történik egy állításon */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="space-y-6 py-12 md:py-24"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary leading-tight text-center">
+            Mi történik egy állításon?
+          </h2>
+
+          <div className="max-w-4xl mx-auto space-y-6 text-center md:text-left px-4 sm:px-6">
+            <p className="text-base sm:text-lg leading-relaxed">
+              Az állítás azzal kezdődik, hogy megfogalmazod: most épp mi a
+              legnagyobb teher az életedben. A mező rendeződik, és szereplőket
+              "állítunk" fel, akik az adott probléma energetikáját jelenítik
+              meg. A folyamat során felszínre kerülnek a rejtett dinamikák,
+              kötődések, és kimondatlan érzések.
+            </p>
+            <p className="text-base sm:text-lg leading-relaxed">
+              Ha van elég bátorság benned, hogy szembenézz ezekkel, akkor
+              elindulhat a gyógyulás – nemcsak benned, hanem az egész családi
+              rendszeredben is. Aki eljön, gyakran úgy távozik, hogy "mintha
+              mázsás terheket tett volna le".
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-6">
+              <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/session1.jpg"
+                  alt="Állítás illusztráció 1"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/session2.jpg"
+                  alt="Állítás illusztráció 2"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/session3.jpg"
+                  alt="Állítás illusztráció 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
