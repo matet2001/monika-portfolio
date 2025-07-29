@@ -5,6 +5,8 @@ import { Quicksand } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import Header from "@/components/Header";
 import { Toaster } from "sonner";
+import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -13,7 +15,8 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Mónika Családállítás",
+  title:
+    "Családállítás Mónikával – Egyéni és Csoportos ülések Gyálon és online",
   description:
     "Családállítás Gyálon és online Nagy Mónikával – egyéni és csoportos lehetőségek, lelki oldások, mélyebb megértés önmagadról.",
   other: {
@@ -28,10 +31,71 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className={`${quicksand.variable} antialiased`}>
-      <meta
-        name="google-site-verification"
-        content="EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs"
-      />
+      <Head>
+        {/* Google Verification */}
+        <meta
+          name="google-site-verification"
+          content="EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs"
+        />
+
+        {/* Person Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Nagy Mónika",
+              jobTitle: "Családállító",
+              description:
+                "Családállítás Gyálon és online – egyéni és csoportos ülések",
+              url: "https://www.monikacsaladallitas.hu",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Gyál",
+                addressCountry: "HU",
+              },
+              sameAs: [
+                "https://www.facebook.com/monika.nagy.9693001",
+                "https://www.instagram.com/monika.nagy.9693001/",
+              ],
+            }),
+          }}
+        />
+
+        {/* LocalBusiness Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Mónika Családállítás",
+              description:
+                "Családállítás Gyálon és online Nagy Mónikával – egyéni és csoportos lehetőségek",
+              url: "https://www.monikacsaladallitas.hu",
+              telephone: "+36 30 312 3763",
+              priceRange: "Ft10000 - Ft20000",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Táncsics Mihály utca 4",
+                addressLocality: "Gyál",
+                postalCode: "2360",
+                addressCountry: "HU",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 47.3847131,
+                longitude: 19.2163119,
+              },
+              sameAs: [
+                "https://www.facebook.com/monika.nagy.9693001",
+                "https://www.instagram.com/monika.nagy.9693001/",
+              ],
+            }),
+          }}
+        />
+      </Head>
       <body className="font-main antialiased text-foreground overflow-x-hidden">
         <div className="min-h-screen flex flex-col">
           <Header />
@@ -39,6 +103,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Toaster position="top-center" richColors />
           <Footer />
+          <SpeedInsights />
         </div>
       </body>
     </html>

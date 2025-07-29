@@ -147,7 +147,7 @@ export default function ApplySection() {
           <div className="relative w-full max-w-sm sm:max-w-md h-72 sm:h-96 rounded-xl overflow-hidden shadow-xl">
             <Image
               src="/monika-coach.jpg"
-              alt="Mónika állítást tart"
+              alt="Családállítás illusztráció – terápiás folyamat szemléltetése"
               fill
               className="object-cover"
             />

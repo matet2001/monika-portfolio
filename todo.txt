@@ -1,0 +1,2 @@
+- Make highlight to the section you are in
+- Change url based on scroll position

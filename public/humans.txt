@@ -1,0 +1,9 @@
+/* TEAM */
+Developer: Pojbics Máté
+Designer: Pojbics Máté
+Owner: Nagy Mónika
+Site: https://www.monikacsaladallitas.hu
+Created: 2025
+
+/* THANKS */
+Powered by Next.js, Shadcn, Tailwind, and Framer Motion

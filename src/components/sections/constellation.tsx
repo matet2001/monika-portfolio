@@ -47,7 +47,7 @@ export default function ConstellationSection() {
           >
             <Image
               src="/monika-couch-cropped.jpg"
-              alt="Mónika családállítás közben"
+              alt="Mónika ül azon a helyen, ahol családállításokat tart"
               fill
               className="object-cover"
             />
@@ -65,7 +65,7 @@ export default function ConstellationSection() {
           >
             <Image
               src="/group.jpg"
-              alt="Csoportos családállítás"
+              alt="Résztvevők egy csoportos családállítás után Mónikával"
               fill
               className="object-cover"
             />
@@ -172,23 +172,25 @@ export default function ConstellationSection() {
               <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-xl">
                 <Image
                   src="/session1.jpg"
-                  alt="Állítás illusztráció 1"
+                  alt="Családállítás illusztráció – egyéni ülés szimbolikus megjelenítése"
                   fill
                   className="object-cover"
                 />
               </div>
+
               <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-xl">
                 <Image
                   src="/session2.jpg"
-                  alt="Állítás illusztráció 2"
+                  alt="Családállítás illusztráció – csoportos munka energetikai folyamata"
                   fill
                   className="object-cover"
                 />
               </div>
+
               <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-xl">
                 <Image
                   src="/session3.jpg"
-                  alt="Állítás illusztráció 3"
+                  alt="Családállítás jelenet illusztrációja – a kapcsolódás tere"
                   fill
                   className="object-cover"
                 />

@@ -61,7 +61,7 @@ export default function AboutSection() {
           <div className="relative aspect-square w-full rounded-full overflow-hidden shadow-lg border-4 border-primary bg-background-secondary/80">
             <Image
               src="/monika-selfie-cropped.png"
-              alt="Nagy Mónika"
+              alt="Nagy Mónika portréja"
               fill
               className="object-cover"
               priority
