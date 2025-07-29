@@ -38,6 +38,9 @@ export default function RootLayout({
           content="EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs"
         />
 
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
         {/* Person Schema */}
         <script
           type="application/ld+json"
