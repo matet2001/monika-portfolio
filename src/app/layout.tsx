@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import { Toaster } from "sonner";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -107,6 +108,7 @@ export default function RootLayout({
           <Toaster position="top-center" richColors />
           <Footer />
           <SpeedInsights />
+          <Analytics />
         </div>
       </body>
     </html>
