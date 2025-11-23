@@ -12,7 +12,7 @@ export default function AboutSection() {
       className="w-full bg-background flex items-center min-h-screen -mt-7"
     >
       <div className="container max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 lg:py-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center a">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
