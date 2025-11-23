@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
 export default function ContactSection() {
   return (
     <section
-      id="contact"
+      id="kapcsolat"
       className="w-full px-4 sm:px-6 md:px-10 scroll-mt-[var(--header-height)] bg-gradient-primary text-foreground py-16 md:py-24"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center justify-between">

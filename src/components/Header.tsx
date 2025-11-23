@@ -15,11 +15,11 @@ import { motion } from "framer-motion";
 import { scrollToView } from "@/lib/utils";
 
 const navItems = [
-  { href: "#intro", label: "Bemutatkozás" }, // About Monika
-  { href: "#about-constellation", label: "Családállítás" }, // What is Family Constellation?
-  { href: "#signup", label: "Jelentkezem", isCta: true }, // CTA Book
-  { href: "#testimonials", label: "Vélemények" },
-  { href: "#contact", label: "Kapcsolat" },
+  { href: "#bemutatkozas", label: "Bemutatkozás" },
+  { href: "#csaladallitas", label: "Családállítás" },
+  { href: "#jelentkezes", label: "Jelentkezem", isCta: true },
+  { href: "#velemenyek", label: "Vélemények" },
+  { href: "#kapcsolat", label: "Kapcsolat" },
 ];
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -29,11 +29,11 @@ export default function Header() {
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="sticky top-0 z-50 w-full backdrop-blur-md rounded-b-3xl h-[var(--header-height)]"
+      className="sticky top-0 z-50 w-full h-[var(--header-height)]"
     >
-      <div className="container mx-auto flex h-full items-center justify-between px-4 max-w-7xl w-full">
+      <div className="container mx-auto flex h-full items-center justify-between px-4 sm:px-6 md:px-10 backdrop-blur-md rounded-b-3xl bg-muted/30  border-b border-muted-foreground/10 w-full max-w-[1400px]">
         {/* Logo / Brand */}
-        <Link href="/" className="text-xl font-semibold text-primary">
+        <Link href="/" className="text-xl font-semibold">
           🌸 Családállítás
         </Link>
 

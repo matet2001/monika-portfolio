@@ -17,9 +17,40 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   title:
-    "Családállítás Mónikával – Egyéni és Csoportos ülések Gyálon és online",
+    "Családállítás Nagy Mónikával – Egyéni és Csoportos Ülések Gyálon és Online",
   description:
-    "Családállítás Gyálon és online Nagy Mónikával – egyéni és csoportos lehetőségek, lelki oldások, mélyebb megértés önmagadról.",
+    "Család- és rendszerállítás Gyálon és online Nagy Mónikával. Egyéni és csoportos ülések 20.000 Ft-tól. Találd meg a valódi okokat, oldódj fel, élj szabadabban. Foglalj időpontot most!",
+  keywords: [
+    "családállítás",
+    "rendszerállítás",
+    "családállítás Gyál",
+    "családállítás online",
+    "Nagy Mónika",
+    "csoportos családállítás",
+    "egyéni családállítás",
+    "lelki gyógyulás",
+    "családi minták",
+  ],
+  authors: [{ name: "Nagy Mónika" }],
+  creator: "Nagy Mónika",
+  openGraph: {
+    type: "website",
+    locale: "hu_HU",
+    url: "https://www.monikacsaladallitas.hu",
+    title:
+      "Családállítás Nagy Mónikával – Egyéni és Csoportos Ülések Gyálon és Online",
+    description:
+      "Család- és rendszerállítás Gyálon és online. Egyéni és csoportos ülések. Találd meg a valódi okokat, oldódj fel, élj szabadabban.",
+    siteName: "Családállítás Nagy Mónikával",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   other: {
     "google-site-verification": "EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs",
   },

@@ -3,13 +3,6 @@
 import Image from "next/image";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "../ui/select";
 import { useState } from "react";
 import { toast } from "sonner";
 import { CheckCircle } from "lucide-react";
@@ -18,6 +11,7 @@ import { motion } from "framer-motion";
 export default function ApplySection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,110 +43,127 @@ export default function ApplySection() {
 
   return (
     <section
-      id="signup"
-      className="w-full px-4 sm:px-6 md:px-10 bg-gradient-main scroll-mt-[var(--header-height)] py-16 md:py-24"
+      id="jelentkezes"
+      className="w-full bg-background scroll-mt-[var(--header-height)] my-8 md:py-12 md:my-12 py-8"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* Left — Form */}
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="w-full md:w-1/2 space-y-8"
-        >
-          <div className="space-y-4 text-center md:text-left">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary leading-tight">
-              Találkozzunk személyesen vagy online!
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground">
-              Jelentkezz családállításra – válaszd ki a számodra megfelelő
-              módot, és vágjunk bele együtt!
-            </p>
-          </div>
-
-          {!isSubmitted ? (
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Input
-                  type="text"
-                  placeholder="Vezetéknév"
-                  name="lastName"
-                  required
-                  disabled={isLoading}
-                />
-                <Input
-                  type="text"
-                  placeholder="Keresztnév"
-                  name="firstName"
-                  required
-                  disabled={isLoading}
-                />
-              </div>
-
-              <Input
-                type="email"
-                placeholder="Email címed..."
-                name="email"
-                required
-                disabled={isLoading}
-              />
-
-              <Select name="type" required disabled={isLoading}>
-                <SelectTrigger className="w-full cursor-pointer">
-                  <SelectValue placeholder="Válassz családállítás típust..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="egyeni-szemelyes">
-                    Egyéni állítás – személyes részvétellel (20.000 Ft)
-                  </SelectItem>
-                  <SelectItem value="egyeni-online">
-                    Egyéni állítás – online (20.000 Ft)
-                  </SelectItem>
-                  <SelectItem value="csoportos-szemelyes">
-                    Csoportos állítás – helyszíni részvétellel (10.000 Ft / fő)
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-
-              <Button
-                type="submit"
-                className="w-full h-12 text-base"
-                disabled={isLoading}
-              >
-                {isLoading ? "Küldés..." : "Jelentkezem"}
-              </Button>
-            </form>
-          ) : (
-            <div className="space-y-4 text-center md:text-left">
-              <CheckCircle className="text-green-500 w-10 h-10 mx-auto md:mx-0" />
-              <h3 className="text-2xl font-semibold text-green-700">
-                A jelentkezés sikeres volt!
-              </h3>
-              <p className="text-muted-foreground">
-                Kérlek, nézd meg az emailedet. Hamarosan keresni foglak.
-              </p>
-            </div>
-          )}
-        </motion.div>
-
-        {/* Right — Image */}
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          viewport={{ once: true }}
-          className="w-full md:w-1/2 flex justify-center"
-        >
-          <div className="relative w-full max-w-sm sm:max-w-md h-72 sm:h-96 rounded-xl overflow-hidden shadow-xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          {/* Image Container */}
+          <div className="relative w-full">
             <Image
-              src="/monika-coach.jpg"
-              alt="Családállítás illusztráció – terápiás folyamat szemléltetése"
-              fill
-              className="object-cover"
+              src="/monika_photos/IMG_4947.webp"
+              alt="Nagy Mónika családállítás"
+              width={5112}
+              height={3408}
+              className="w-full h-auto"
+              priority
             />
+
+            {/* Overlay with gradient for content readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/75 to-transparent md:from-foreground/85 md:via-foreground/60 md:to-transparent" />
           </div>
-        </motion.div>
+
+          {/* Content Overlay */}
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full max-w-xl px-6 sm:px-8 md:px-12 lg:px-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <div className="space-y-3">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                    Találkozzunk személyesen vagy online!
+                  </h2>
+                  <p className="text-sm sm:text-base lg:text-lg text-white/90">
+                    Jelentkezz családállításra – válaszd ki a számodra megfelelő
+                    módot, és vágjunk bele együtt!
+                  </p>
+                </div>
+
+                {!isSubmitted ? (
+                  <form className="space-y-4" onSubmit={handleSubmit}>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Input
+                        type="text"
+                        placeholder="Vezetéknév"
+                        name="lastName"
+                        required
+                        disabled={isLoading}
+                        className="bg-white/95 border-white/20 placeholder:text-muted-foreground h-11"
+                      />
+                      <Input
+                        type="text"
+                        placeholder="Keresztnév"
+                        name="firstName"
+                        required
+                        disabled={isLoading}
+                        className="bg-white/95 border-white/20 placeholder:text-muted-foreground h-11"
+                      />
+                    </div>
+
+                    <Input
+                      type="email"
+                      placeholder="Email címed..."
+                      name="email"
+                      required
+                      disabled={isLoading}
+                      className="bg-white/95 border-white/20 placeholder:text-muted-foreground h-11"
+                    />
+
+                    <select
+                      name="type"
+                      required
+                      disabled={isLoading}
+                      value={selectedService}
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      className="w-full h-11 px-3 rounded-md bg-white/95 border border-white/20 text-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="" disabled>
+                        Válassz családállítás típust...
+                      </option>
+                      <option value="december-20-csoportos">
+                        December 20. csoportos családállítás (20.000 Ft témával
+                        / 10.000 Ft segítőként)
+                      </option>
+                      <option value="egyeni-szemelyes">
+                        Egyéni állítás – személyes részvétellel (20.000 Ft)
+                      </option>
+                      <option value="egyeni-online">
+                        Egyéni állítás – online (20.000 Ft)
+                      </option>
+                      <option value="csoportos-szemelyes">
+                        Csoportos állítás – helyszíni részvétellel (10.000 Ft /
+                        fő)
+                      </option>
+                    </select>
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-shadow mt-2"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? "Küldés..." : "Jelentkezem"}
+                    </Button>
+                  </form>
+                ) : (
+                  <div className="space-y-3 bg-white/95 p-6 rounded-xl">
+                    <CheckCircle className="text-green-600 w-10 h-10" />
+                    <h3 className="text-xl font-semibold text-green-700">
+                      A jelentkezés sikeres volt!
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Kérlek, nézd meg az emailedet. Hamarosan keresni foglak.
+                    </p>
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
