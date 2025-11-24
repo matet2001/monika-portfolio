@@ -23,9 +23,9 @@ export default function GroupEventSection() {
   return (
     <section
       id="group-event"
-      className="w-full px-4 sm:px-6 md:px-10 scroll-mt-[var(--header-height)] bg-gradient-to-br from-primary/5 via-background to-primary/10 text-foreground py-16 md:py-24"
+      className="w-full px-4 sm:px-6 md:px-10 scroll-mt-[var(--header-height)] bg-gradient-to-br from-primary/5 via-background to-primary/10 text-foreground py-16 md:py-24 overflow-hidden"
     >
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,17 +44,17 @@ export default function GroupEventSection() {
             >
               Közelgő esemény
             </motion.div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary px-2">
               Csoportos családállítás
             </h2>
-            <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
               December 20.
             </p>
           </div>
 
           {/* Content */}
           <div className="max-w-3xl mx-auto space-y-8">
-            <p className="text-lg sm:text-xl leading-relaxed text-center">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center break-words">
               Csatlakozz egy különleges csoportos állításhoz, ahol közösen
               dolgozunk a résztvevők kérdésein. A csoportos munka ereje abban
               rejlik, hogy mások történetében is felismerhetjük a saját
@@ -138,9 +138,10 @@ export default function GroupEventSection() {
               <Button
                 onClick={handleSignup}
                 size="lg"
-                className="w-full sm:w-auto sm:min-w-[320px] h-14 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="w-full sm:w-auto sm:min-w-[280px] h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all px-4"
               >
-                Jelentkezem a December 20-i eseményre
+                <span className="hidden sm:inline">Jelentkezem a December 20-i eseményre</span>
+                <span className="sm:hidden">Jelentkezem December 20.</span>
               </Button>
             </motion.div>
           </div>

@@ -19,7 +19,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="space-y-6 order-2 lg:order-1"
+            className="space-y-6 order-1 lg:order-1"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground">
               Szia, <span className="text-primary">Nagy Mónika</span> vagyok.
@@ -62,7 +62,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="order-1 lg:order-2 relative w-full h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] overflow-hidden shadow-2xl rounded-2xl"
+            className="order-2 lg:order-2 relative w-full h-[450px] sm:h-[550px] md:h-[650px] lg:h-[800px] overflow-hidden shadow-2xl rounded-2xl"
           >
             <Image
               src="/monika_photos/IMG_4952.webp"

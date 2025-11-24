@@ -47,9 +47,9 @@ export default function ApplySection() {
       className="w-full bg-background scroll-mt-[var(--header-height)] my-8 md:py-12 md:my-12 py-8"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-          {/* Image Container */}
-          <div className="relative w-full">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-primary/5 md:bg-none">
+          {/* Image Container - Hidden on mobile */}
+          <div className="hidden md:block relative w-full">
             <Image
               src="/monika_photos/IMG_4947.webp"
               alt="Nagy Mónika családállítás"
@@ -60,11 +60,11 @@ export default function ApplySection() {
             />
 
             {/* Overlay with gradient for content readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/75 to-transparent md:from-foreground/85 md:via-foreground/60 md:to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/60 to-transparent" />
           </div>
 
           {/* Content Overlay */}
-          <div className="absolute inset-0 flex items-center">
+          <div className="relative md:absolute inset-0 flex items-center py-12 md:py-0">
             <div className="w-full max-w-xl px-6 sm:px-8 md:px-12 lg:px-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -74,10 +74,10 @@ export default function ApplySection() {
                 className="space-y-6"
               >
                 <div className="space-y-3">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground md:text-white leading-tight">
                     Találkozzunk személyesen vagy online!
                   </h2>
-                  <p className="text-sm sm:text-base lg:text-lg text-white/90">
+                  <p className="text-sm sm:text-base lg:text-lg text-foreground md:text-white/90">
                     Jelentkezz családállításra – válaszd ki a számodra megfelelő
                     módot, és vágjunk bele együtt!
                   </p>
