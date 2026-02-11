@@ -124,9 +124,9 @@ export default function ApplySection() {
                       <option value="" disabled>
                         Válassz családállítás típust...
                       </option>
-                      <option value="december-20-csoportos">
-                        December 20. csoportos családállítás (20.000 Ft témával
-                        / 10.000 Ft segítőként)
+                      <option value="csoportos">
+                        Csoportos családállítás (20.000 Ft témával / 10.000 Ft
+                        segítőként)
                       </option>
                       <option value="egyeni-szemelyes">
                         Egyéni állítás – személyes részvétellel (20.000 Ft)

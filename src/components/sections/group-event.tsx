@@ -14,7 +14,7 @@ export default function GroupEventSection() {
         'select[name="type"]'
       ) as HTMLSelectElement;
       if (selectElement) {
-        selectElement.value = "december-20-csoportos";
+        selectElement.value = "csoportos";
         selectElement.dispatchEvent(new Event("change", { bubbles: true }));
       }
     }, 300);
@@ -47,9 +47,6 @@ export default function GroupEventSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary px-2">
               Csoportos családállítás
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-              December 20.
-            </p>
           </div>
 
           {/* Content */}
@@ -75,7 +72,7 @@ export default function GroupEventSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-lg">Időpont</p>
-                    <p className="text-muted-foreground">December 20.</p>
+                    <p className="text-muted-foreground">Hamarosan</p>
                   </div>
                 </motion.div>
 
@@ -140,8 +137,7 @@ export default function GroupEventSection() {
                 size="lg"
                 className="w-full sm:w-auto sm:min-w-[280px] h-14 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all px-4"
               >
-                <span className="hidden sm:inline">Jelentkezem a December 20-i eseményre</span>
-                <span className="sm:hidden">Jelentkezem December 20.</span>
+                Jelentkezem a csoportos állításra
               </Button>
             </motion.div>
           </div>
