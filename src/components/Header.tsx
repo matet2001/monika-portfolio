@@ -34,7 +34,10 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-full items-center justify-between px-4 sm:px-6 md:px-10 backdrop-blur-md rounded-b-3xl bg-muted/30  border-b border-muted-foreground/10 w-full max-w-[1400px]">
         {/* Logo / Brand */}
-        <Link href="/" className="flex items-center gap-2 text-xl font-semibold">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-xl font-semibold"
+        >
           <Image
             src="/monika_logo.png"
             alt="Mónika Családállítás logo"
