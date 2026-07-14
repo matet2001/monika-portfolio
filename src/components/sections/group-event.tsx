@@ -108,7 +108,7 @@ export default function GroupEventSection() {
                       20.000 Ft témával
                     </p>
                     <p className="text-primary font-bold text-sm sm:text-base leading-tight">
-                      10.000 Ft segítőként
+                      15.000 Ft segítőként
                     </p>
                   </div>
                 </motion.div>
