@@ -23,7 +23,7 @@ export default function GroupEventSection() {
   return (
     <section
       id="group-event"
-      className="w-full px-4 sm:px-6 md:px-10 scroll-mt-[var(--header-height)] bg-gradient-to-br from-primary/5 via-background to-primary/10 text-foreground py-16 md:py-24 overflow-hidden"
+      className="w-full px-4 sm:px-6 md:px-10 scroll-mt-[var(--header-height)] bg-gradient-to-br from-primary/5 via-background to-primary/10 text-foreground py-10 md:py-12 2xl:py-24 overflow-hidden"
     >
       <div className="max-w-[1200px] mx-auto w-full">
         <motion.div
@@ -31,48 +31,51 @@ export default function GroupEventSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex flex-col space-y-12"
+          className="flex flex-col space-y-6"
         >
           {/* Title */}
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-3">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-semibold mb-4"
+              className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-semibold"
             >
               Közelgő esemény
             </motion.div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary px-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl font-bold text-primary px-2">
               Csoportos családállítás
             </h2>
           </div>
 
           {/* Content */}
-          <div className="max-w-3xl mx-auto space-y-8">
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center break-words">
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-base sm:text-lg 2xl:text-xl leading-relaxed text-center break-words">
               Csatlakozz egy különleges csoportos állításhoz, ahol közösen
               dolgozunk a résztvevők kérdésein. A csoportos munka ereje abban
               rejlik, hogy mások történetében is felismerhetjük a saját
               mintáinkat – és ez váratlan felismeréseket, mély gyógyulást hozhat.
             </p>
 
-            <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-8 space-y-6 shadow-lg">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-5 sm:p-6 shadow-lg">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center text-center space-y-3"
+                  className="flex items-center gap-4 justify-center md:justify-start"
                 >
-                  <div className="bg-primary/10 p-4 rounded-full">
-                    <Calendar className="w-8 h-8 text-primary" />
+                  <div className="bg-primary/10 p-3 rounded-full shrink-0">
+                    <Calendar className="w-7 h-7 text-primary" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <p className="font-semibold text-lg">Időpont</p>
-                    <p className="text-muted-foreground">Hamarosan</p>
+                    <p className="text-muted-foreground">
+                      Augusztus 8. (szombat)
+                    </p>
+                    <p className="text-muted-foreground">12:00–18:00</p>
                   </div>
                 </motion.div>
 
@@ -81,12 +84,12 @@ export default function GroupEventSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center text-center space-y-3"
+                  className="flex items-center gap-4 justify-center md:justify-start"
                 >
-                  <div className="bg-primary/10 p-4 rounded-full">
-                    <Users className="w-8 h-8 text-primary" />
+                  <div className="bg-primary/10 p-3 rounded-full shrink-0">
+                    <Users className="w-7 h-7 text-primary" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <p className="font-semibold text-lg">Formátum</p>
                     <p className="text-muted-foreground">Csoportos állítás</p>
                   </div>
@@ -97,13 +100,13 @@ export default function GroupEventSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center text-center space-y-3"
+                  className="flex items-center gap-4 justify-center md:justify-start"
                 >
-                  <div className="bg-primary/10 p-4 rounded-full">
-                    <MapPin className="w-8 h-8 text-primary" />
+                  <div className="bg-primary/10 p-3 rounded-full shrink-0">
+                    <MapPin className="w-7 h-7 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-base sm:text-lg mb-2">Részvételi díj</p>
+                  <div className="text-left">
+                    <p className="font-semibold text-lg">Részvételi díj</p>
                     <p className="text-primary font-bold text-sm sm:text-base leading-tight">
                       20.000 Ft témával
                     </p>
@@ -115,8 +118,8 @@ export default function GroupEventSection() {
               </div>
             </div>
 
-            <div className="bg-primary/5 border-l-4 border-primary p-5 sm:p-6 md:p-8 rounded-r-lg">
-              <p className="text-foreground leading-relaxed text-base sm:text-lg">
+            <div className="bg-primary/5 border-l-4 border-primary p-4 sm:p-5 rounded-r-lg">
+              <p className="text-foreground leading-relaxed text-base 2xl:text-lg">
                 A csoportos állításon résztvevőként nem csak a saját témádban
                 dolgozhatsz, hanem helyettesítőként is tapasztalatot
                 szerezhetsz, ami gyakran ugyanolyan erőteljes lehet. Biztonságos
@@ -130,7 +133,7 @@ export default function GroupEventSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
-              className="flex justify-center pt-4"
+              className="flex justify-center pt-1"
             >
               <Button
                 onClick={handleSignup}

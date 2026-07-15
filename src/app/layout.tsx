@@ -5,7 +5,6 @@ import { Quicksand } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import Header from "@/components/Header";
 import { Toaster } from "sonner";
-import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -54,6 +53,55 @@ export const metadata: Metadata = {
   other: {
     "google-site-verification": "EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs",
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Nagy Mónika",
+  jobTitle: "Családállító",
+  description: "Családállítás Gyálon és online – egyéni és csoportos ülések",
+  url: "https://www.monikacsaladallitas.hu",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Gyál",
+    addressCountry: "HU",
+  },
+  sameAs: [
+    "https://www.facebook.com/monika.nagy.9693001",
+    "https://www.instagram.com/monika.nagy.9693001/",
+  ],
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Mónika Családállítás",
+  description:
+    "Családállítás Gyálon és online Nagy Mónikával – egyéni és csoportos lehetőségek",
+  url: "https://www.monikacsaladallitas.hu",
+  telephone: "+36 30 312 3763",
+  priceRange: "Ft10000 - Ft20000",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Táncsics Mihály utca 4",
+    addressLocality: "Gyál",
+    postalCode: "2360",
+    addressCountry: "HU",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 47.3847131,
+    longitude: 19.2163119,
+  },
+  sameAs: [
+    "https://www.facebook.com/monika.nagy.9693001",
+    "https://www.instagram.com/monika.nagy.9693001/",
+  ],
 };
 
 export default function RootLayout({
@@ -63,75 +111,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className={`${quicksand.variable} antialiased`}>
-      <Head>
-        {/* Google Verification */}
-        <meta
-          name="google-site-verification"
-          content="EZus6TEOuPwe3Eqkq8eG6kX99gt29kOAHslhoC6PtVs"
-        />
-
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-
-        {/* Person Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Nagy Mónika",
-              jobTitle: "Családállító",
-              description:
-                "Családállítás Gyálon és online – egyéni és csoportos ülések",
-              url: "https://www.monikacsaladallitas.hu",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Gyál",
-                addressCountry: "HU",
-              },
-              sameAs: [
-                "https://www.facebook.com/monika.nagy.9693001",
-                "https://www.instagram.com/monika.nagy.9693001/",
-              ],
-            }),
-          }}
-        />
-
-        {/* LocalBusiness Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Mónika Családállítás",
-              description:
-                "Családállítás Gyálon és online Nagy Mónikával – egyéni és csoportos lehetőségek",
-              url: "https://www.monikacsaladallitas.hu",
-              telephone: "+36 30 312 3763",
-              priceRange: "Ft10000 - Ft20000",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Táncsics Mihály utca 4",
-                addressLocality: "Gyál",
-                postalCode: "2360",
-                addressCountry: "HU",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 47.3847131,
-                longitude: 19.2163119,
-              },
-              sameAs: [
-                "https://www.facebook.com/monika.nagy.9693001",
-                "https://www.instagram.com/monika.nagy.9693001/",
-              ],
-            }),
-          }}
-        />
-      </Head>
       <body className="font-main antialiased text-foreground overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
         <div className="min-h-screen flex flex-col">
           <Header />
 

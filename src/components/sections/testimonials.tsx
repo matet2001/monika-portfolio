@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center space-y-4 mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-foreground">
             Vélemények
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">

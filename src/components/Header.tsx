@@ -32,7 +32,7 @@ export default function Header() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="sticky top-0 z-50 w-full h-[var(--header-height)]"
     >
-      <div className="container mx-auto flex h-full items-center justify-between px-4 sm:px-6 md:px-10 backdrop-blur-md rounded-b-3xl bg-muted/30  border-b border-muted-foreground/10 w-full max-w-[1400px]">
+      <div className="container mx-auto flex h-full items-center justify-between px-4 sm:px-6 md:px-10 backdrop-blur-md rounded-b-3xl bg-background/90 border-b border-border shadow-sm w-full max-w-[1400px]">
         {/* Logo / Brand */}
         <Link
           href="/"
@@ -50,7 +50,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-4 justify-center  ">
+        <nav className="hidden md:flex gap-4 lg:gap-6 justify-center">
           {navItems.map((item) => (
             <Button
               key={item.href}

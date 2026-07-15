@@ -55,7 +55,7 @@ export default function ApplySection() {
               alt="Nagy Mónika családállítás"
               width={5112}
               height={3408}
-              className="w-full h-auto"
+              className="w-full h-auto max-h-[560px] 2xl:max-h-[720px] object-cover object-[center_30%]"
               priority
             />
 
