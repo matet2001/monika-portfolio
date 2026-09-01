@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+<img src="public/monika_logo.png" alt="Mónika Családállítás" width="120" />
 
-First, run the development server:
+# Mónika Családállítás
+
+**Marketing site & booking funnel for Nagy Mónika, family constellation facilitator (Gyál, Hungary).**
+
+### 🌿 [www.monikacsaladallitas.hu](https://www.monikacsaladallitas.hu/) 🌿
+
+[![Next.js](https://img.shields.io/badge/Next.js-15.3-000000?logo=next.js&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Deployed on Vercel](https://img.shields.io/badge/Vercel-deployed-000000?logo=vercel&logoColor=white)](https://vercel.com)
+
+</div>
+
+---
+
+## About the project
+
+A single-page, Hungarian-language site that introduces Mónika's family and systemic
+constellation practice and turns visitors into applicants. Everything lives on one
+scroll: who she is, what constellation work does, the next group event, the application
+form, testimonials, and contact details.
+
+Submitting the form sends two emails through a Next.js Route Handler — a confirmation
+to the applicant and a notification to Mónika — so there is no database, CMS or
+third-party form service to maintain.
+
+## Highlights
+
+- 🧭 **One-page funnel** — anchor navigation (`#bemutatkozas`, `#csaladallitas`, `#jelentkezes`, `#velemenyek`, `#kapcsolat`) with smooth scrolling from both the desktop nav and the mobile sheet menu.
+- ✉️ **Application form that just works** — `POST /apply` sends the applicant a confirmation and Mónika a notification via Nodemailer + Gmail, with `sonner` toasts for feedback.
+- 📅 **Group event block** — highlights the upcoming session with dates, location and pricing (20.000 Ft with a topic, 15.000 Ft as a helper), and deep-links into the form with the right service preselected.
+- 💬 **Testimonial carousel** — autoplaying Embla carousel of real client quotes.
+- 🎬 **Motion throughout** — scroll-triggered `motion` animations on every section.
+- 📱 **TikTok embed** — pulls in Mónika's latest videos from [@monimatekmagyar](https://www.tiktok.com/@monimatekmagyar).
+- 🔍 **SEO & structured data** — Hungarian metadata, Open Graph tags, `Person` + `LocalBusiness` JSON-LD, `sitemap.xml` and `robots.txt`.
+- 📊 **Analytics** — Vercel Analytics and Speed Insights wired into the root layout.
+
+## Tech stack
+
+| Layer | Choice |
+| --- | --- |
+| Framework | Next.js 15 (App Router, Turbopack dev) |
+| Language | TypeScript 5, React 19 |
+| Styling | Tailwind CSS 4, `tw-animate-css`, Typography plugin |
+| Components | shadcn/ui on Radix primitives, `lucide-react` icons |
+| Motion | `motion` (Framer Motion) |
+| Carousel | Embla + autoplay |
+| Email | Nodemailer over Gmail SMTP |
+| Hosting | Vercel |
+
+## Getting started
 
 ```bash
+git clone https://github.com/matet2001/monika-portfolio.git
+cd monika-portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` in the project root — the application form needs these:
 
-## Learn More
+```bash
+GMAIL_USER=your.address@gmail.com
+GMAIL_APP_PASSWORD=your-16-char-app-password
+```
 
-To learn more about Next.js, take a look at the following resources:
+> `GMAIL_APP_PASSWORD` is a [Google App Password](https://support.google.com/accounts/answer/185833),
+> not the account password. Without these two values the form returns a 500 and no mail is sent.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Dev server with Turbopack |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint (note: lint errors are ignored during builds) |
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/
+│   ├── layout.tsx          # Fonts, metadata, JSON-LD, header/footer, analytics
+│   ├── page.tsx            # Composes the one-page site from sections
+│   ├── globals.css         # Tailwind theme tokens & gradients
+│   └── apply/route.ts      # POST /apply — sends the two emails
+├── components/
+│   ├── Header.tsx          # Sticky nav + mobile sheet menu
+│   ├── Footer.tsx
+│   ├── sections/           # about, constellation, tiktok, group-event,
+│   │                       # apply, testimonials, contact
+│   └── ui/                 # shadcn/ui primitives
+└── lib/utils.ts            # cn() + scrollToView()
+public/                     # Photos, logos, favicons, sitemap.xml, robots.txt
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Adding a section means dropping a component into `src/components/sections/` and
+rendering it from [`src/app/page.tsx`](src/app/page.tsx); give it an `id` if it should
+appear in the header navigation.
+
+## Deployment
+
+Deployed on Vercel from `main`. Set `GMAIL_USER` and `GMAIL_APP_PASSWORD` in the Vercel
+project's environment variables, otherwise the production form will fail silently for
+the visitor and log a 500 on the server.
+
+---
+
+<div align="center">
+<sub>Built with ❤️ for Nagy Mónika · <a href="https://www.monikacsaladallitas.hu/">monikacsaladallitas.hu</a></sub>
+</div>
