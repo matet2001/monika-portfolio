@@ -2,7 +2,7 @@ import AboutSection from "@/components/sections/about";
 import ApplySection from "@/components/sections/apply";
 import ConstellationSection from "@/components/sections/constellation";
 import TikTokSection from "@/components/sections/tiktok";
-import GroupEventSection from "@/components/sections/group-event";
+// import GroupEventSection from "@/components/sections/group-event";
 import ContactSection from "@/components/sections/contact";
 import TestimonialsSection from "@/components/sections/testimonials";
 
@@ -12,7 +12,7 @@ export default function Home() {
       <AboutSection />
       <ConstellationSection />
       <TikTokSection />
-      <GroupEventSection />
+      {/* <GroupEventSection /> — hidden until the next group event */}
       <ApplySection />
       <TestimonialsSection />
       <ContactSection />
